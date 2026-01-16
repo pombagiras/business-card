@@ -47,12 +47,6 @@ Meu trabalho é um girar de saia vermelha e preta: respeito, ética, beleza e ve
 
 ### Cartão de Visitas Digital Interativo
 
-Clique abaixo e experimente meu cartão virtual (flip card 3D):
-
-(https://pombagiras.github.io/business-card/)](https://pombagiras.github.io/business-card/)
-
-
-
 </div>
 
 <br>
