@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartão de Visitas - Alexia Melusine</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #2c3e50, #4a5f7a, #7b8fa1, #95a5a6);
+background-size: 300% 300%;
+animation:gradientShift 10s ease infinite;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:15px;
+overflow-x:hidden;
+}
+@keyframes gradientShift{
+0%,100%{background-position:0% 50%}
+50%{background-position:100% 50%}
+}
+.flip-card{
+width:320px;
+height:520px;
+perspective:1000px;
+}
+.flip-card-inner{
+width:100%;
+height:100%;
+transition:transform .7s ease;
+transform-style:preserve-3d;
+}
+.flip-card.flipped .flip-card-inner{
+transform:rotateY(180deg);
+}
+.flip-card-front,.flip-card-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+.flip-card-front{
+background: linear-gradient(145deg, #3a4a5c, #2c3e50);
+}
+.flip-card-back{
+background: linear-gradient(160deg, #3a4a5c, #4a5f7a, #2c3e50);
+transform:rotateY(180deg);
+padding:20px;
+display:flex;
+flex-direction:column;
+}
+.photo-front{
+width:100%;
+height:100%;
+object-fit:cover;
+filter: grayscale(100%) contrast(110%);
+}
+.front-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+padding:25px 15px;
+background: linear-gradient(to top, rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.7), transparent);
+text-align:center;
+}
+.name-overlay{color:#fff;font-size:22px;font-weight:bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);}
+.title-overlay{color:rgba(255,255,255,.85);font-size:14px; letter-spacing: 1px;}
+.touch-overlay{font-size:11px;color:rgba(255,255,255,.7); letter-spacing: 0.5px;}
+.photo-back{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
+margin:0 auto 10px;
+border:2px solid rgba(255,255,255,.4);
+filter: grayscale(100%) contrast(110%);
+}
+.back-header{text-align:center;margin-bottom:15px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);}
+.back-name{font-size:16px;color:#fff;font-weight:bold; letter-spacing: 0.5px;}
+.back-title{font-size:11px;color:rgba(255,255,255,.85); letter-spacing: 1px; text-transform: uppercase;}
+.back-content{
+flex:1;
+overflow-y:auto;
+padding-right:4px;
+display: flex;
+flex-direction: column;
+}
+.portfolio-section{
+background:rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.1);
+padding:15px;
+border-radius:12px;
+margin-bottom:20px;
+}
+.portfolio-section h3{
+text-align:center;
+color:#ecf0f1;
+margin-bottom:12px;
+font-size:13px;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+letter-spacing: 1px;
+}
+.social-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+.social-btn{
+background:rgba(44, 62, 80, 0.7);
+color:#ecf0f1;
+text-decoration:none;
+padding:12px 8px;
+border-radius:8px;
+text-align:center;
+font-size:11px;
+border: 1px solid rgba(255,255,255,0.15);
+transition: all 0.3s ease;
+font-weight: 500;
+letter-spacing: 0.5px;
+}
+.social-btn:hover{
+background:rgba(58, 83, 108, 0.9);
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.site-button{
+display:block;
+width:80%;
+margin:auto auto 0;
+padding:14px;
+text-align:center;
+background: linear-gradient(90deg, #4a5f7a, #7b8fa1);
+color:#fff;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+transition: all 0.3s ease;
+border: none;
+box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+letter-spacing: 0.5px;
+}
+.site-button:hover{
+background: linear-gradient(90deg, #5a6f8a, #8b9fb1);
+transform: translateY(-2px);
+box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+.flip-card-front, .flip-card-back {
+    border: 1px solid rgba(255,255,255,0.1);
+}
+</style>
+</head>
+<body>
+<div class="flip-card" id="flipCard">
+<div class="flip-card-inner">
+<!-- FRENTE -->
+<div class="flip-card-front" onclick="flipCard()">
+<img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira-revelada/refs/heads/main/Al%C3%AA%20(8).png"
+     alt="Alexia Melusine" class="photo-front">
+<div class="front-overlay">
+<h1 class="name-overlay">Alexia Melusine 🌹</h1>
+<p class="title-overlay">Criadora de conteúdo</p>
+<p class="touch-overlay">Toque para virar</p>
+</div>
+</div>
+<!-- VERSO -->
+<div class="flip-card-back" onclick="flipCard()">
+<img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira-revelada/refs/heads/main/Al%C3%AA%20(7).png"
+     alt="Alexia Melusine" class="photo-back">
+<div class="back-header">
+<div class="back-name">Alexia Melusine</div>
+<div class="back-title">Criadora de conteúdo</div>
+</div>
+<div class="back-content">
+<div class="portfolio-section">
+<h3>🔗 Redes Sociais</h3>
+<div class="social-grid">
+<a class="social-btn" href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank">Kwai</a>
+<a class="social-btn" href="https://www.youtube.com/@almasdepombagira" target="_blank">YouTube</a>
+<a class="social-btn" href="https://www.instagram.com/almasdepombagira" target="_blank">Instagram</a>
+<a class="social-btn" href="https://www.tiktok.com/@almasdepombagira" target="_blank">TikTok</a>
+<a class="social-btn" href="https://t.me/pomba_giras" target="_blank">Telegram</a>
+<a class="social-btn" href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank">WhatsApp</a>
+<a class="social-btn" href="https://www.threads.com/@almasdepombagira" target="_blank">Threads</a>
+<a class="social-btn" href="https://br.pinterest.com/almasdepombagira/" target="_blank">Pinterest</a>
+</div>
+</div>
+<a href="https://bio.site/AlmasdePombagira" target="_blank" class="site-button">
+Acesse Meu Site Oficial
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+function flipCard(){
+  document.getElementById("flipCard").classList.toggle("flipped");
+}
+</script>
+</body>
+</html>
