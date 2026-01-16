@@ -49,7 +49,7 @@ Meu trabalho é um girar de saia vermelha e preta: respeito, ética, beleza e ve
 
 Clique abaixo e experimente meu cartão virtual (flip card 3D):
 
-[![Cartão Alexia Melusine](https://pombagiras.github.io/business-card/)](https://pombagiras.github.io/business-card/)
+(https://pombagiras.github.io/business-card/)](https://pombagiras.github.io/business-card/)
 
 
 
